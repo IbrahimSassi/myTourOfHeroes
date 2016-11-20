@@ -1,5 +1,4 @@
 <h2>My Heroes</h2>
-
 <div>
   <label>Hero name:</label> <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">
@@ -8,7 +7,7 @@
 </div>
 <hr>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [routerLink]="['/detail', hero.id]"
       [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span>
     <span>{{hero.name}}</span>
